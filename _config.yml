@@ -11,7 +11,7 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Sanjeevi Kumar # add your name
 author-img: sanjeevi-kumar.jpg # add your photo
-about-author: I am a web developer focusing on front-end development. I am also an experienced in DevOps, Middleware and Python development. Always hungry to keep learning. # add description
+about-author: I am a full stack developer with experience in Angular, Node JS & Mongo DB. I am also an experienced in DevOps, Middleware and Python development. Always hungry to keep learning. # add description
 social-twitter: sanman89tall # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: sanjeevik89 # add your Github handle
