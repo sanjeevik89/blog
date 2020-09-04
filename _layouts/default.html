@@ -2,11 +2,20 @@
 <html lang="en">
 {% include head.html %}
 <body>
-
+{% include javascripts.html %}
+<aside>
+  <dark-mode-toggle
+      id="dark-mode-toggle-1"
+      legend="Theme Switcher"
+      appearance="switch"
+      dark="Dark"
+      light="Light"
+      remember="Remember this"
+  ></dark-mode-toggle>
+</aside>
   <div class="wrapper">
     {{ content }}
   </div>
-  
-  {% include analytics.html %}
+
 </body>
 </html>
