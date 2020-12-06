@@ -1,0 +1,17 @@
+from fuzzywuzzy import fuzz
+import sys
+import codecs
+
+with codecs.open("7750_sort_uniq.csv", 'r', encoding='utf-8',
+                 errors='ignore') as a_file:
+        with codecs.open("ISP_sort_uniq.csv", 'r', encoding='utf-8',
+                 errors='ignore') as b_file:
+                for a_line in a_file:
+                        Str1 = a_line.strip().lower()
+                        # print(Str1)
+                        b_file.seek(0,0)
+                        for b_line in b_file:
+                                Str2 = b_line.strip().lower()
+                                Ratio = fuzz.ratio(Str1,Str2)
+                                if Ratio > 70:
+                                        print("%d match :BETWEEN: %s :AND: %s" % (Ratio, Str1 , Str2))
