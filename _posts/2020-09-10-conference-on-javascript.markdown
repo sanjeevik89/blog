@@ -6,8 +6,82 @@ description: You’ll find this post in your `_posts` directory. Go ahead and ed
 img: js-1.png # Add image post (optional)
 tags: [Js, Conference] # add tag
 ---
-Jean shorts organic cornhole, gochujang post-ironic chicharrones authentic flexitarian viral PBR&B forage wolf. Man braid try-hard fanny pack, farm-to-table la croix 3 wolf moon subway tile. Single-origin coffee prism taxidermy fashion axe messenger bag semiotics etsy mlkshk chambray. Marfa lumbersexual meditation celiac. Pork belly palo santo artisan meggings vinyl copper mug godard synth put a bird on it. Cloud bread pop-up quinoa, raw denim meditation 8-bit slow-carb. Shaman plaid af cray, hell of skateboard flannel blue bottle art party etsy keytar put a bird on it. Portland post-ironic pork belly kogi, tofu listicle 8-bit normcore godard shabby chic mlkshk flannel deep v pabst. Pork belly kinfolk fingerstache lo-fi raclette. Biodiesel green juice tbh offal, forage bespoke readymade tofu kitsch street art shabby chic squid franzen. Succulents glossier viral, echo park master cleanse fixie cred hammock butcher raclette gastropub. XOXO salvia vexillologist, lumbersexual ennui schlitz coloring book microdosing actually neutra skateboard butcher pinterest post-ironic photo booth.
+MySQL Dump:
+```
+docker exec some-mysql sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /some/path/on/your/host/all-databases.sql
+```
+MySQL Restore of the Dump
+```
+docker exec -i some-mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /some/path/on/your/host/all-databases.sql
+```
 
-Four dollar toast blog austin artisan raw denim vinyl woke, salvia hella truffaut meh hexagon. Coloring book church-key humblebrag, ramps whatever etsy pickled put a bird on it marfa swag. Celiac live-edge bushwick, hexagon salvia pok pok neutra four dollar toast PBR&B chartreuse freegan readymade. Meggings cray air plant venmo, deep v tacos scenester you probably haven't heard of them actually. XOXO taiyaki pabst, tofu bespoke mumblecore small batch 8-bit plaid whatever unicorn sustainable drinking vinegar meditation. Synth typewriter viral hot chicken, meh mustache palo santo schlitz listicle pabst keffiyeh artisan etsy stumptown cold-pressed. Occupy locavore cray irony. Chambray whatever vaporware keffiyeh heirloom vice. Single-origin coffee neutra iPhone lyft. Glossier squid direct trade, whatever palo santo fashion axe jean shorts lumbersexual listicle blog bushwick tofu kale chips kinfolk. Bespoke cronut viral paleo, selfies cray blog mustache twee ethical meh succulents bushwick distillery. Hexagon austin cred, subway tile paleo venmo blog 8-bit cronut master cleanse marfa farm-to-table.
+How to setup VSCode Remote:
+```commit_id=cd9ea6488829f560dc949a8b2fb789f3cdc05f5d
 
-Live-edge vinyl meh, quinoa umami palo santo narwhal letterpress farm-to-table typewriter chartreuse vice tacos leggings. Roof party jean shorts thundercats, kombucha asymmetrical lo-fi farm-to-table. Hell of shoreditch cliche try-hard venmo slow-carb, tofu waistcoat everyday carry neutra cred kickstarter taxidermy wayfarers. Direct trade banh mi pug skateboard banjo edison bulb. Intelligentsia cliche quinoa synth umami. Trust fund four loko hoodie paleo cray tote bag slow-carb ennui. Williamsburg food truck intelligentsia trust fund. Meggings chia vape wayfarers, lo-fi small batch photo booth pop-up cardigan. Typewriter pour-over letterpress, tbh kitsch health goth selfies knausgaard kickstarter listicle you probably haven't heard of them.
+# Download url is: https://update.code.visualstudio.com/commit:${commit_id}/server-linux-x64/stable
+curl -sSL "https://update.code.visualstudio.com/commit:${commit_id}/server-linux-x64/stable" -o vscode-server-linux-x64.tar.gz
+
+mkdir -p ~/.vscode-server/bin/${commit_id}
+# assume that you upload vscode-server-linux-x64.tar.gz to /tmp dir
+tar zxvf /tmp/vscode-server-linux-x64.tar.gz -C ~/.vscode-server/bin/${commit_id} --strip 1
+touch ~/.vscode-server/bin/${commit_id}/0
+```
+
+Python to convert PEM to JSON:
+```
+import json
+import os
+import ssl
+import sys
+from collections import OrderedDict
+from pprint import pprint as pp
+
+def main():
+    debug = False
+    if len(sys.argv) == 3:
+      if sys.argv[2] == "-d":
+        debug = True
+
+    if debug:
+      print("Python {:s} on {:s}\n".format(sys.version, sys.platform))
+      print("cli arg1: {:s}\n".format(sys.argv[1]))
+
+    cert_file_name = os.path.join(os.path.dirname(__file__), sys.argv[1])
+    try:
+        ordered_dict = OrderedDict()
+        ordered_dict = ssl._ssl._test_decode_cert(cert_file_name)
+        if debug: pp(ordered_dict)
+
+    except Exception as e:
+        print("Error decoding certificate {:s}: {:s}\n".format(cert_file_name,e))
+
+    print(json.dumps(ordered_dict))
+
+if __name__ == "__main__":
+    main()
+
+```
+
+To the best of my knowledge, syslog-ng and rsyslog (the default) are the only ones available on RHEL. You could either probe the process space, see which process currently holds /var/log/syslog open or simply check which syslog daemon is installed (though, it's possible to have them both installed at the same time).
+
+
+$ lsof /var/log/messages /var/log/syslog 2>&1 | grep syslog
+$ rpm -q rsyslog syslog-ng
+$ pgrep -u root syslog | xargs ps -p
+
+Powershell Base64 Encoding:
+```
+[Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("Y3Nwcm9vdDpjc3Byb290"))
+```
+
+'iptables -I INPUT -p tcp --dport 1022 -j ACCEPT'
+
+command start-process PowerShell -verb runas
+
+
+ zip -r ioneers.zip ioneers.net/ -x *node_modules/* -x *deploy/*
+ 
+ find -maxdepth 1 ! -name node_modules ! -name . -exec rm -rv {} \;
+ 
+ https://stackoverflow.com/questions/2065447/how-do-i-exclude-a-folder-when-performing-file-operations-i-e-cp-mv-rm-and-ch
+ 
