@@ -3,9 +3,18 @@ layout: post
 title: Miscelleneous 
 date: 2020-09-10 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: js-1.png # Add image post (optional)
-tags: [Js, Conference] # add tag
+img: misc.png # Add image post (optional)
+tags: [learnings, general, work] # add tag
 ---
+
+To the best of my knowledge, syslog-ng and rsyslog (the default) are the only ones available on RHEL. You could either probe the process space, see which process currently holds /var/log/syslog open or simply check which syslog daemon is installed (though, it's possible to have them both installed at the same time).
+
+```
+$ lsof /var/log/messages /var/log/syslog 2>&1 | grep syslog
+$ rpm -q rsyslog syslog-ng
+$ pgrep -u root syslog | xargs ps -p
+```
+
 MySQL Dump:
 ```
 docker exec some-mysql sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /some/path/on/your/host/all-databases.sql
@@ -84,12 +93,6 @@ if __name__ == "__main__":
 
 ```
 
-To the best of my knowledge, syslog-ng and rsyslog (the default) are the only ones available on RHEL. You could either probe the process space, see which process currently holds /var/log/syslog open or simply check which syslog daemon is installed (though, it's possible to have them both installed at the same time).
-
-
-$ lsof /var/log/messages /var/log/syslog 2>&1 | grep syslog
-$ rpm -q rsyslog syslog-ng
-$ pgrep -u root syslog | xargs ps -p
 
 Powershell Base64 Encoding:
 ```

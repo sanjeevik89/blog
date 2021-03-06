@@ -3,7 +3,7 @@ layout: post
 title: Learnings from Sharepoint Integration with Angular
 date: 2020-12-06 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: sharepoint.png # Add image post (optional)
+img: sharepoint-big.png # Add image post (optional)
 tags: [Sharepoint, Javascript, MSAL] # add tag
 ---
 
