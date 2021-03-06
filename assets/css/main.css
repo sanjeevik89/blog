@@ -889,17 +889,17 @@ table tfoot td {
 }
 
 .post, .article-page {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 ::-moz-selection {
   background: rgba(38, 57, 89, 0.8);
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 ::selection {
   background: rgba(38, 57, 89, 0.8);
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 .clearfix::before, .clearfix::after {
@@ -948,7 +948,7 @@ table tfoot td {
   -webkit-border-radius: 100%;
           border-radius: 100%;
   overflow: hidden;
-  background-color: #333030;
+  /* background-color: #333030; */
 }
 
 .about img {
@@ -975,7 +975,7 @@ table tfoot td {
   padding-bottom: 15px;
   font-size: 16px;
   text-transform: uppercase;
-  color: #333030;
+  /* color: #333030; */
   font-weight: 700;
 }
 
@@ -1164,7 +1164,7 @@ footer .copyright {
 .post .post-content .post-title a {
   font-family: 'PT Serif', serif;
   text-decoration: none;
-  color: #263959;
+  /* color: #263959; */
 }
 
 .post .post-content p {

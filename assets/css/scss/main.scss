@@ -13,7 +13,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   color: $body-color;
-  background-color: #fbfbfb;
+  // background-color: #fbfbfb;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -65,14 +65,14 @@ pre {
 }
 
 table {
-  border: 1px solid #aaa;
-  background-color: #eee;
+  border: 1px solid rgb(2, 2, 2);
+  // background-color: #eee;
   width: 100%;
   text-align: left;
   border-collapse: collapse;
 }
 table td, table.blueTable th {
-  border: 1px solid #aaa;
+  border: 1px solid rgb(12, 10, 10);
   padding: 3px 2px;
 }
 table tbody td {

@@ -5,8 +5,8 @@
   body {
     font-family: sans-serif;
     margin: 2em;
-    color: black;
-    background-color: white;
+    /* color: black; */
+    /* background-color: white; */
   }
   .color-toggle {
     position: fixed;
