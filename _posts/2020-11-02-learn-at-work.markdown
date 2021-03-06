@@ -7,6 +7,7 @@ img: misc.png # Add image post (optional)
 tags: [learnings, general, work] # add tag
 ---
 
+### Find Syslog log locations  
 To the best of my knowledge, syslog-ng and rsyslog (the default) are the only ones available on RHEL. You could either probe the process space, see which process currently holds /var/log/syslog open or simply check which syslog daemon is installed (though, it's possible to have them both installed at the same time).
 
 ```
@@ -14,7 +15,7 @@ $ lsof /var/log/messages /var/log/syslog 2>&1 | grep syslog
 $ rpm -q rsyslog syslog-ng
 $ pgrep -u root syslog | xargs ps -p
 ```
-
+### MySQL data dump
 MySQL Dump:
 ```
 docker exec some-mysql sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /some/path/on/your/host/all-databases.sql
@@ -24,7 +25,7 @@ MySQL Restore of the Dump
 docker exec -i some-mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /some/path/on/your/host/all-databases.sql
 ```
 
-How to setup VSCode Remote:
+### How to setup VSCode Remote:
 ```commit_id=cd9ea6488829f560dc949a8b2fb789f3cdc05f5d
 
 # Download url is: https://update.code.visualstudio.com/commit:${commit_id}/server-linux-x64/stable
@@ -36,7 +37,7 @@ tar zxvf /tmp/vscode-server-linux-x64.tar.gz -C ~/.vscode-server/bin/${commit_id
 touch ~/.vscode-server/bin/${commit_id}/0
 ```
 
-Using fuzzwuzz python module to fuzzycompare files:
+### Using fuzzwuzz python module to fuzzycompare files:
 ```
 from fuzzywuzzy import fuzz
 import sys
@@ -58,7 +59,7 @@ with codecs.open("7750_sort_uniq.csv", 'r', encoding='utf-8',
                                         
 ```                                        
 
-Python to convert PEM to JSON:
+### Python to convert PEM to JSON:
 ```
 import json
 import os
@@ -94,19 +95,18 @@ if __name__ == "__main__":
 ```
 
 
-Powershell Base64 Encoding:
+### Powershell Base64 Encoding:
 ```
 [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("Y3Nwcm9vdDpjc3Byb290"))
+[Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes("Y3Nwcm9vdDpjc3Byb290"))
+[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("Y3Nwcm9vdDpjc3Byb290"))
 ```
-
-'iptables -I INPUT -p tcp --dport 1022 -j ACCEPT'
 
 command start-process PowerShell -verb runas
 
-
+### Export code without node_modules folder in Windows PC
  zip -r ioneers.zip ioneers.net/ -x *node_modules/* -x *deploy/*
  
  find -maxdepth 1 ! -name node_modules ! -name . -exec rm -rv {} \;
- 
- https://stackoverflow.com/questions/2065447/how-do-i-exclude-a-folder-when-performing-file-operations-i-e-cp-mv-rm-and-ch
+
  

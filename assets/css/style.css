@@ -8,6 +8,37 @@
     color: black;
     background-color: white;
   }
+  .color-toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 275px;
+    height: 15%;
+  }
+  .twitter-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: fixed;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    width: 275px;
+    height: 100%;
+    padding: 10px 10px;
+    background-color: #ffffff;
+  }
   
   dark-mode-toggle {
     position: absolute;
