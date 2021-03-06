@@ -14,7 +14,7 @@
     right: 0;
     bottom: 0;
     width: 275px;
-    height: 15%;
+    height: 10%;
   }
   .twitter-content {
     display: -webkit-box;
@@ -31,7 +31,7 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     position: fixed;
-    top: 20%;
+    top: 15%;
     right: 0;
     bottom: 0;
     width: 275px;
