@@ -7,8 +7,6 @@ permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sanjeevik89.github.io" # Replace with your GitHub Pages URL (e.g., https://yourusername.github.io/my-jekyll-site) IF deploying to a subdirectory. If deploying to the root of your username's page, replace with "https://yourusername.github.io".
 
-
-
 # Author Settings
 author: Sanjeevi Kumar # add your name
 author-img: sanjeevi-kumar.jpg # add your photo
