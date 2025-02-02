@@ -5,15 +5,14 @@ description: > # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 permalink: ':title/'
 baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: #if your site has a twitter account, enter it here
+url: "https://sanjeevik89.github.io/blog" # Replace with your GitHub Pages URL (e.g., https://yourusername.github.io/my-jekyll-site) IF deploying to a subdirectory. If deploying to the root of your username's page, replace with "https://yourusername.github.io".
+
+
 
 # Author Settings
 author: Sanjeevi Kumar # add your name
 author-img: sanjeevi-kumar.jpg # add your photo
 about-author: I am a full stack developer with experience in Angular, Python & MongoDB. I am also an experienced in DevOps, Middleware and Unix Shell development. Always hungry to keep learning. # add description
-social-twitter: sanman89tall # add your Twitter handle
-social-facebook: # add your Facebook handle
 social-github: sanjeevik89 # add your Github handle
 social-linkedin: sanjeevi-kumar # add your Linkedin handle
 social-email: sanjeevik89@gmail.com # add your Email address
