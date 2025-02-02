@@ -43,7 +43,9 @@ body {
   padding: 1rem;
   margin-bottom: 1rem;
   /* background-color: #ffffff; */
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   #toggleBtn {
     padding: 10px 10px;
     cursor: pointer;
