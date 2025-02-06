@@ -6,7 +6,9 @@ layout: default
   <header>
     <div class="about">
       <div class="cover-author-image">
-        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
+        <a href="{{site.baseurl}}/"><img
+            src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}"
+            alt="{{site.author}}"></a>
       </div>
       <div class="author-name">{{site.author}}</div>
       <p>{{site.about-author}}</p>
@@ -16,26 +18,25 @@ layout: default
     <section class="contact">
       <h3 class="contact-title">Contact me</h3>
       <ul>
-        {% if site.social-twitter %}
-          <li><a href="https://twitter.com/{{ site.social-twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        {% else %}
-          <li><a href="https://twitter.com/sanman89tall" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        {% endif %}
-        
         {% if site.social-github %}
-          <li class="github"><a href="http://github.com/{{site.social-github}}" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li class="github"><a href="http://github.com/{{site.social-github}}" target="_blank"><i
+              class="fa fa-github"></i></a></li>
         {% else %}
-          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github"
+              aria-hidden="true"></i></a></li>
         {% endif %}
         {% if site.social-linkedin %}
-          <li class="linkedin"><a href="https://in.linkedin.com/in/{{site.social-linkedin}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li class="linkedin"><a href="https://in.linkedin.com/in/{{site.social-linkedin}}" target="_blank"><i
+              class="fa fa-linkedin"></i></a></li>
         {% else %}
-          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin"
+              aria-hidden="true"></i></a></li>
         {% endif %}
         {% if site.social-email %}
-          <li class="email"><a href="mailto:{{site.social-email}}"><i class="fa fa-envelope-o"></i></a></li>
+        <li class="email"><a href="mailto:{{site.social-email}}"><i class="fa fa-envelope-o"></i></a></li>
         {% else %}
-          <li class="email"><a href="mailto:sanjeevik89@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+        <li class="email"><a href="mailto:sanjeevik89@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        </li>
         {% endif %}
       </ul>
     </section> <!-- End Section Contact -->
@@ -45,22 +46,21 @@ layout: default
   </footer> <!-- End Footer -->
 </aside> <!-- End Sidebar -->
 <div class="content-box clearfix">
-  {{ content }}                              
-<!--   {% include career-timeline.html %} -->
+  {{ content }}
+  <!--   {% include career-timeline.html %} -->
 </div>
 <div class="color-toggle">
-<dark-mode-toggle
-      id="dark-mode-toggle-1"
-      legend="Theme Switcher"
-      appearance="switch"
-      dark="Dark"
-      light="Light"
-      remember="Remember this"
-  ></dark-mode-toggle>
-   </div>
-<div class="twitter-content">
-  <div>
-    <a class="twitter-timeline" data-height="800" data-theme="light" href="https://twitter.com/sanman89tall?ref_src=twsrc%5Etfw">Tweets by sanman89tall</a> 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-</div> 
+  <dark-mode-toggle id="dark-mode-toggle-1" legend="Theme Switcher" appearance="switch" dark="Dark" light="Light"
+    remember="Remember this">
+  </dark-mode-toggle>
+</div>
+
+<div class="mastodon_wrapper">
+  <img alt="Mastodon" src="{{site.baseurl}}/assets/img/wordmark-white-text.01e9f493.svg"
+    srcset="{{site.baseurl}}/assets/img/wordmark-white-text.01e9f493.svg 1x, {{site.baseurl}}/assets/img/wordmark-white-text.01e9f493.svg 2x"
+    decoding="async" data-nimg="intrinsic" />
+  <div id="mastodon_timeline">
+    <p>Let's switch this out for a Mastodon feed.</p>
+  </div>
+  <button id="toggleBtn">Hide Mastodon</button>
+</div>

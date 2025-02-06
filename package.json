@@ -1,7 +1,7 @@
 {
-  "name": "jekyll-github-pages",
+  "name": "sanjeevi-blog",
   "version": "1.0.0",
-  "description": "A starter project for Jekyll",
+  "description": "A blog website using Jekyll",
   "main": "index.js",
   "repository": "https://github.com/sanjeevik89/blog",
   "author": "Sanjeevi Kumar",
