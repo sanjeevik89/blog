@@ -6,7 +6,7 @@ layout: default
   <header>
     <div class="about">
       <div class="cover-author-image">
-        <a href="{{site.baseurl}}/"><img
+        <a href="{{relative_url}}/"><img
             src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}"
             alt="{{site.author}}"></a>
       </div>
@@ -56,8 +56,8 @@ layout: default
 </div>
 
 <div class="mastodon_wrapper">
-  <img alt="Mastodon" src="{{site.baseurl}}/assets/img/wordmark-white-text.01e9f493.svg"
-    srcset="{{site.baseurl}}/assets/img/wordmark-white-text.01e9f493.svg 1x, {{site.baseurl}}/assets/img/wordmark-white-text.01e9f493.svg 2x"
+  <img alt="Mastodon" src="{{ '/assets/img/wordmark-white-text.01e9f493.svg' | relative_url }}"
+    loading="lazy"
     decoding="async" data-nimg="intrinsic" />
   <div id="mastodon_timeline">
     <p>Let's switch this out for a Mastodon feed.</p>

@@ -28,9 +28,9 @@
     <meta content="{{ site.url }}/about/" property="article:author">
   {% endif %}
   {% if page.img %}
-    <meta content="{{ site.url }}{{ site.baseurl }}/assets/img/{{ page.img }}" property="og:image">
+    <meta content="{{ site.url }}/assets/img/{{ page.img }} | relative_url" property="og:image">
   {% else %}
-    <meta content="{{ site.url }}{{ site.baseurl }}/assets/img/{{ site.author-img }}" property="og:image">
+    <meta content="{{ site.url }}/assets/img/{{ site.author-img }} | relative_url" property="og:image">
   {% endif %}
   {% if page.categories %}
     {% for category in page.categories limit:1 %}
@@ -49,10 +49,10 @@
 	<meta property="og:image" content="">
   <meta name="supported-color-schemes" content="dark light">
   <meta name="color-scheme" content="dark light">
-	<link rel="shortcut icon" href="{{ "/assets/img/favicon/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
-	<link rel="apple-touch-icon" href="{{ "/assets/img/favicon/apple-touch-icon.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="72x72" href="{{ "/assets/img/favicon/apple-touch-icon-72x72.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="144x144" href="{{ "/assets/img/favicon/apple-touch-icon-144x144.png" | prepend: site.baseurl }}">
+	<link rel="shortcut icon" href="{{ "/assets/img/favicon/favicon.ico" | relative_url}}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{{ "/assets/img/favicon/apple-touch-icon.png" | relative_url}}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ "/assets/img/favicon/apple-touch-icon-72x72.png" | relative_url}}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ "/assets/img/favicon/apple-touch-icon-144x144.png" | relative_url}}">
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="#263959">
 	<!-- Windows Phone -->
